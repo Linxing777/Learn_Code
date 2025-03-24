@@ -1,0 +1,27 @@
+/* 
+ * @author: pys
+ * @date: 2025-02-14
+ */
+
+ .button-sp-area {
+    margin: 15px auto; 
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .weui-btn {
+    display: block;
+    /* 类似于div */
+    /* 将元素显示为块级元素，使其独占一行 */
+    width: 184px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 24px;
+    font-weight: 500;
+    font-size:17px;
+    text-align: center;
+    line-height: 1.411;
+    text-decoration: none;
+    color: #fff;
+    background-color: #07c160;
+  }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+a标签---伪链接：
+    1. 语法：
+        a:link{
+        ---超链接初始状态
+            属性：值；
+        }
+        a:visited{
+        ---超链接访问过的状态
+            属性：值；
+        }
+        a:hover{
+        ---超链接鼠标悬停的状态
+            属性：值；
+        }
+        a:active{
+        ---超链接鼠标按下的状态
+            属性：值；
+        }
+    Link、visited、hover、active
+        顺序：link、visited、hover、active
+-->
+<style>
+    a:link{
+        color: red;
+    }
+    a:visited{
+        color: green;
+    }
+    a:hover{
+        color: blue;
+    }
+    a:active{
+        color: pink;
+    }
+</style>
+<body>
+    <a href="http://www.baidu.com/aaa">百度</a>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <label for="Input">用户搜索</label>
+        <input
+            type="text"
+            placeholder="请输入用户名字"
+            id="Input"
+        >
+    </div>
+    <ul id="users">
+
+    </ul>
+    <script>
+        // 通往后端接口
+        const oUL = document.querySelector('#users');
+        const Input = document.getElementById('Input');
+        // Input.addEventListener('keyup', function () {
+        //     // 当作为事件的处理函数来用时，this 指向触发事件的元素
+        //     //    console.log('用户输入',this.value); 
+        //     let val = this.value.trim();
+        //     if(val === ''){
+        //         oUL.innerHTML = '';
+        //         return;
+        //     }
+        //     fetch('http://localhost:3001/users')
+        //         .then(res => res.json())
+        //         .then(users => {
+        //             const filterUsers = users.filter(
+        //                 user => user.name.includes(val)
+        //             )
+        //             // Array 在es6中新增了一个方法，map
+        //             oUL.innerHTML = filterUsers.map(user =>
+        //                 `<li>${user.name}</li>`
+        //             ).join("");
+        //             // for(let user of filterUsers){
+        //             //     const oLI = document.createElement('li');
+        //             //     oLI.innerHTML = user.name;
+        //             //     oUL.appendChild(oLI);
+        //             // }
+        //         });
+        // });
+        const debounceNameSearch = debounce(handleNameSearch, 500);
+        Input.addEventListener('keyup', debounceNameSearch);
+        
+        function handleNameSearch() {
+            let val = Input.value.trim();
+            if(val === ''){
+                oUL.innerHTML = '';
+                return;
+            }
+            fetch('http://localhost:3001/users')
+                .then(res => res.json())
+                .then(users => {
+                    const filterUsers = users.filter(
+                        user => user.name.includes(val)
+                    )
+                    // Array 在es6中新增了一个方法，map
+                    oUL.innerHTML = filterUsers.map(user =>
+                        `<li>${user.name}</li>`
+                    ).join("");
+                    // for(let user of filterUsers){
+                    //     const oLI = document.createElement('li');
+                    //     oLI.innerHTML = user.name;
+                    //     oUL.appendChild(oLI);
+                    // }
+                });
+            }
+        // 防抖
+        // 高阶函数
+        function debounce(fn, delay) {
+            let id;
+            return function () {
+                clearTimeout(id);
+                
+                id = setTimeout(() => {
+                    fn();
+                }, delay);
+            }
+        }
+    
+    
+    </script>
+</body>
+</html>

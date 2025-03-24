@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- // 手写定时器 -->
+
+    <script>
+            function abortableTimer(fn, delay) {
+      const controller = new AbortController();
+      
+      function loop() {
+        setTimeout(() => {
+          if (controller.signal.aborted) return;
+          fn();
+          loop();
+        }, delay);
+      }
+      
+      loop();
+      return controller.abort.bind(controller);
+    }
+
+    // 使用
+    const abort = abortableTimer(() => {
+      console.log('随时可关闭');
+    }, 1000);
+
+    // 关闭
+    //  setTimeout(() => {
+            abort();
+        // },10000);
+
+    </script>
+
+</body>
+</html>

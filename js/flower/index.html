@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pei = {
+            name:'裴游盛',
+            age: 17,
+            hobbies:['打球','cf'],
+            sendflower(tar){
+                tar.receiverflower(pei);
+            }
+        }
+        const xm = {
+            name: 'cjy',
+            age: 19,
+            hometown: '江西 ',
+            xq: 50,
+            receiverflower(sender){
+                if(xm.xq < 80){
+                    console.log('gun~~~~')
+                }else{
+                    console.log(sender.name + '去玩玩')
+                }
+            }
+        }
+        const xh = {
+            name: 'ss',
+            receiverflower(sender){
+                // if(sender.name === '裴游盛'){
+                //     console.log('让我们在一起吧！')
+                //     return;
+                // }
+                setTimeout(function(){
+                    xm.xq = 99
+                    xm.receiverflower(sender)
+                }, 5000)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box1{
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            padding: 5px;
+            border: 1px solid green;
+            background-color: red;
+            position: absolute;
+            /* 常用于微调元素的位置，或者作为绝对定位元素的参考容器。适合文档流 */
+            /* position: absolute; */
+            /* 常用于创建浮动元素、弹出框、菜单等，这些元素需要脱离文档流并相对于某个特定的容器进行定位。 */
+            top:30px;
+            left: 30px;
+            /* 盒子模型 */
+        }
+        #box2{
+            margin: 10px;
+            width: 300px;
+            height: 300px;
+            padding: 5px;
+            border: 1px solid red;
+            background-color: blue;
+            /* 盒子模型 */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        页面绘制出来
+        html  文档流 和 css 结合 样式生效 盒模型
+    -->
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

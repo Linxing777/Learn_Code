@@ -1,0 +1,272 @@
+/* Eric Meyer's Reset CSS v2.0 - http://meyerweb.com/eric/tools/css/reset/ */
+/* 扩展版本 */
+/* css reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {   
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ 
+/* 业务样式 */
+
+/* 设置整体页面样式 */
+
+/* body, html {
+   height: 100vh;
+   width: 100vw;
+
+} */
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background:url('./111.jpg') no-repeat center center fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加刮奖卡纹理背景 */
+body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            rgba(0,0,0,0.1) 0,
+            rgba(0,0,0,0.1) 2px,
+            transparent 2px,
+            transparent 8px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(0,0,0,0.1) 0,
+            rgba(0,0,0,0.1) 2px,
+            transparent 2px,
+            transparent 8px
+        );
+    transform: rotate(10deg);
+    pointer-events: none;
+}
+
+#app {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 4px 8px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    max-width: 90%;
+    width: 600px;
+}
+
+#app:hover {
+    transform: translateY(-5px);
+}
+
+#content {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -0.5px;
+}
+
+#content::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #007bff 50%, transparent 100%);
+}
+
+input[type="button"] {
+    padding: 12px 28px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+    color: white;
+    cursor: pointer;
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+input[type="button"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.15),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    filter: brightness(1.1);
+}
+
+input[type="button"]:active {
+    transform: translateY(1px);
+    filter: brightness(0.95);
+}
+
+/* 添加入场动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#app {
+    animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: url('./111.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 半透明刮刮层 */
+body::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.15) 0,
+            rgba(255,255,255,0.15) 2px,
+            transparent 2px,
+            transparent 8px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255,255,255,0.15) 0,
+            rgba(255,255,255,0.15) 2px,
+            transparent 2px,
+            transparent 8px
+        );
+    transform: rotate(10deg);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+#app {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.15),
+        inset 0 4px 8px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+    z-index: 1;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    max-width: 90%;
+    width: 600px;
+}
+
+/* 其余保持原有优化样式不变 */
+#content {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -0.5px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+input[type="button"] {
+    /* 保持原有按钮样式 */
+}
+
+/* 保持动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

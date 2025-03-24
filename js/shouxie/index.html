@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var a ={
+        name:"sai",
+        fn:function(a, b){
+            console.log(this.name);
+            console.log(a + b);
+        }
+    }
+     var b = a.fn; // 普通函数
+     // 指定this
+     // 立即执行
+     // 参数
+   b(1,2);
+    b.apply(a, [1, 2]);
+    // 等价下面
+    a.fn(1, 2);
+    b.call(a, 1, 2);
+    b.call(a, [1, 2]) // 输出 a [1, 2] + undefined   + 两边都是数字
+    // apply 和 call 都是指向this的函数
+    // 区别在于参数的传递方式
+    // apply 是数组 call 是参数列表
+    // call(this, a, b, c ...)  apply(this, [a, b, c...])
+    console.log(b.bind(a, 1, 2)());
+    </script>
+</body>
+</html>

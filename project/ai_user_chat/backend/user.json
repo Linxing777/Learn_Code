@@ -1,0 +1,19 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "裴游盛", 
+            "hometown": "China"
+        },
+        {
+            "id": 2,
+            "name": "王志岩",
+            "hometown": "China"
+        },
+        {
+            "id": 3,
+            "name": "张宇",
+            "hometown": "China"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "裴游盛"
+    },
+    {
+      "id": "2",
+      "name": "李华"
+    },
+    {
+      "id": "3",
+      "name": "王浩"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "前端技能",
+      "content": "HTML、CSS、JavaScript",
+      "authorId": 1
+    },
+    {
+      "id": "2",
+      "title": "我是神仙",
+      "content": "你是神仙吗",
+      "authorId": 2
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: aliceblue;
+        }
+        h1{
+            background-color: aliceblue;
+        }
+        p{
+            background-color: aquamarine;
+        }
+        /* 可以写成 */  /* 提出公共代码，节约代码量 */
+        div,p,h1,.www{
+            background-color: aquamarine;
+        }
+      /* 后代选择器，里层选择器,从右到左的选择，先匹配孩子然后再是父代*/
+        div p{
+            background-color: blue;
+        }
+        p b{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div>sdfdsf</div>
+    <div>   
+        <p>sdfdsf</p>
+    </div>
+    <p>sdfdsf</p>
+    <h1>sdfdsf</h1>
+    <p class="www">sdfdsf</p>
+</body>
+</html>

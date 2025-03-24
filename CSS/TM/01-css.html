@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        h1{
+            color: red;
+        }
+        h2{
+            color: green;
+        }
+        h3{
+            color: blue;
+        }
+    </style> -->
+    <!-- link一般常用，兼容性号好，可以在浏览时同时加载 -->
+   <link rel="stylesheet" type="text/css" href="./css/index.css"> 
+    <!-- <style>
+        @import url("./css/index.css"  );
+    </style> -->
+    <!-- 选择器（方便每个需要的属性）id:"  #  "和 class:" . " 的选择器
+     class能用多个，id只能用一个，但是class可以重复使用，id只能使用一次 
+     -->
+     <style>
+        .idm{
+           color: red;
+           background-color: aquamarine;
+        }
+        .second{
+           background-color: blue;
+       }
+       #box1{
+           background-color: aqua;
+        }
+        #box2{
+            background-color: aquamarine;
+        }
+        #box3{
+            background-color: blueviolet;
+        }
+
+     </style>
+</head>
+<!-- ！important>行内中样式>内部>外部   优先级 -->
+<body>
+    <h1 style="color: aliceblue;">PYS</h1>
+    <h2 style="color: aqua;">WZY</h2>
+    <h3>ZJ</h3>
+    <div class="idm">我是一个段落</div>
+    <div class="idm second">我是一个段落</div>
+    <br><br>
+    <div id="box1">我是一个段落</div>
+    <div id="box2">我是一个段落</div>
+    <div id="box3">我是一个段落</div>
+</body>
+</html>

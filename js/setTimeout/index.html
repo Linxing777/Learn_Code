@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">提前关闭setTimeout定时器</button>
+    <button id="btn">关闭定时器</button>
+    <script>
+    const btn = document.getElementById("btn");
+    const btn1 = document.getElementById("btn1");
+    btn.addEventListener("click",function(){
+        clearInterval(timer);
+    })
+    btn1.addEventListener("click",function(){
+        clearTimeout(tt);
+    });
+        // 卡 js 单线程语言
+        // 异步
+        // setTimeout(function(){
+        //     console.log("22222"); 
+        // },1000);// 0的话也会延迟 因为是异步是执行完主线程才执行， 多少时间后执行
+        // console.log(setTimeout(function(){
+        //     console.log("22222");
+        // },2000));// 每个定时器有个唯一的编号ID
+
+        // const tt = setTimeout(function(){
+        //     console.log("22222"); 
+        // },10000);
+        // 同步代码
+        // while(true){
+            
+        // }
+        // const timer = setInterval(function(){
+        //     console.log("33333");
+        // },1000);//到时间就执行
+        // console.log("11111");
+        
+    </script>
+
+</body>
+</html>

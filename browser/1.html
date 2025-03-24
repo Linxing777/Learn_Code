@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒模型</title>
+    <style>  
+        *{
+            margin: 0;
+            padding: 0; 
+        }
+        .box{
+            /* 怪异模型 IE */
+            box-sizing: border-box;
+           width: 200px;
+           height: 200px;
+           background-color: pink;
+           padding: 20px;
+           margin: 10px;
+           border: 10px solid blue;
+        }
+        .box2{
+            /* 默认值 标准盒模型 W3C*/
+            box-sizing: content-box;
+           width: 200px;
+           height: 200px;
+           background-color: blue;
+           padding: 20px;
+           margin: 10px;
+           border: 10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    </div>
+    <div class="box2">
+    </div>
+</body>
+</html>
