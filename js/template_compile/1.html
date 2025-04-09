@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let template = '我是{{name}},我今年{{age}}岁,我是{{sex}}生'
+    let person ={
+        name:'张三',
+        age:18,
+        sex:'男'
+    }
+  
+//  规则：{{}} 正则 replace
+// vue 挂载前 实例化过程 内存中 模板先编译
+    function compile(template, data){
+        // 正则一个个字符匹配 1 第一个字符
+        // [0-9] 匹配范围 一个字符0-9任何数字
+        // ^ 这个符号代表从字符串的开始匹配
+        // $ 结束匹配指后面没有其他字符
+        // let reg = /1[0-9a-z]{10}/
+        // console.log(reg.test('12345678915'));
+        // let reg = /\{\{(\w+)\}\}/;
+        // 匹配 { 本身 由于{}是正则的特殊字符 所以需要转义 \{
+        //+ 代表前面的字符至少出现一次
+        // () 代表分组 分组的内容可以通过$1 $2 来获取
+        // g 代表全局匹配 匹配到所有符合条件的字符
+        let reg = /\{\{([a-zA-Z]+)\}\}/
+        while(reg.test(template)){
+            const key = reg.exec(template)[1];
+            template = template.replace(reg, key in data ? data[key] : '');
+        }
+            return template;
+        
+        // let key = reg.exec(template)[1];
+        // let value = data[key];
+        // // 正则替换 {{name}} -> value
+        // console.log(template.replace(reg,value))
+        // console.log(template.match(reg));
+    }
+   console.log(compile(template,person)) ;   
+</script>
+</body>
+</html>
