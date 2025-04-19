@@ -46,3 +46,28 @@
       - items prop
       - valid 方法 Boolean 
     
+- web 应用登入
+ - 会话 session
+ - cookie
+ - 用户携带身份证明 token
+ - {
+    ID:1,
+    name: 'zs',
+    avatar: '---'
+ }
+ - 登入流程
+   - 前端提交登入
+   - login.vue 组件化表单
+   - 调用api/ login 接口
+     - 项目多了一层目录 api 目录会管理应用所有的接口
+    - 统一配置的axios 实例发送请求
+
+- 后端验证？
+  - mock 模拟下后端
+    apifox 跳过前端  模拟post 等请求
+    前端mock跳过后端 模拟后端请求
+
+- jwt 登入
+  - npm i jsonwebtoken 令牌
+  - sign  签发
+  - token -> verify 验证 返回用户信息
